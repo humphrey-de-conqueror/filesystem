@@ -17,7 +17,7 @@ static struct dentry *myfs_mount(struct file_system_type *fs_type, int flags, co
 static struct file_system_type myfs_type = {
 	.name		= "myfs",
 	.owner		= THIS_MODULE,
-	.mount		= myfs_mount, 
+	.mount		= myfs_mount,
 	.kill_sb	= kill_litter_super, /* kernel build-in */
 };
 
