@@ -24,8 +24,25 @@ struct inode_operation		-> operation on metadata of file/directory (ls, chmod)
 
 struct file_operation		-> operation on a opened file (cat)
 
+---
+```
+mount time                    runtime
+-----------                   -------
+fs_context_operations    -->  super_operations
+                              inode_operations
+                              file_operations
+```
+
+---
+
 target: 
 + a filesystem that can we mount 
 + has a single root directory 
 + has one hardcoded file 
 + that can be cat from userspace 
+
+prodecure: 
+1. prepare a struct file_system_type
+2. register it (register_filesystem/unregister_filesystem)
+3. in file_system_type, it needs a .init_fs_context argument
+4. mount call mount_single which call myfs_fill_super
