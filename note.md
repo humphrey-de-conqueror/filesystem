@@ -1,3 +1,4 @@
+```
 struct super_operation		-> operation on whole filesystem (mkdir)
 	register_filesystem(&my_fs_type)
 	unregister_filesystem(&my_fs_type)
@@ -23,6 +24,7 @@ struct super_operation		-> operation on whole filesystem (mkdir)
 struct inode_operation		-> operation on metadata of file/directory (ls, chmod)
 
 struct file_operation		-> operation on a opened file (cat)
+```
 
 ---
 ```
